@@ -30,14 +30,14 @@ class AppTheme {
     ),
     
     // Estilo dos cards
-    cardTheme: const CardTheme(
-      elevation: 2,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
-      margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+    // Estilo dos cards
+    cardTheme: const CardThemeData(
+    elevation: 2,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)),
     ),
-    
+    margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+  ),
     // Estilo do botão flutuante
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Colors.deepPurple,
@@ -95,13 +95,14 @@ class AppTheme {
     ),
     
     // Estilo dos cards (escuro)
-    cardTheme: CardTheme(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
-      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+    cardTheme: CardThemeData(
+    elevation: 4,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
     ),
+    margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+    ),
+
     
     // Estilo do botão flutuante (escuro)
     floatingActionButtonTheme: FloatingActionButtonThemeData(
