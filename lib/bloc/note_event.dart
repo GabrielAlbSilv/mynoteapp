@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:helloworld/models/note.dart';
 
 // Classe base para todos os eventos relacionados a notas
 abstract class NoteEvent extends Equatable {
@@ -49,4 +50,22 @@ class ReorderNotes extends NoteEvent {
 
   @override
   List<Object> get props => [oldIndex, newIndex];
+}
+
+class UpdateNoteEvent extends NoteEvent {
+  final Note note;
+  UpdateNoteEvent(this.note);
+}
+class UpdateNote extends NoteEvent {
+  final String noteId;
+  final String title;
+  final String content;
+  final String categoryId;
+
+  UpdateNote({
+    required this.noteId,
+    required this.title,
+    required this.content,
+    required this.categoryId,
+  });
 }

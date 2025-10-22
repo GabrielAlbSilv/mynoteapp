@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../../models/note.dart';
+import 'edit_note_screen.dart';
 
 // Tela para visualizar os detalhes de uma nota
 class NoteDetailScreen extends StatelessWidget {
@@ -126,7 +127,19 @@ class NoteDetailScreen extends StatelessWidget {
                 style: textTheme.bodyLarge,
               ),
               const SizedBox(height: 20),
+
               
+              IconButton(
+                        icon: const Icon(Icons.edit),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => EditNoteScreen(note: note),
+                            ),
+                          );
+                        },
+                      ),
               // Data de criação
               Text(
                 'DATA DE CRIAÇÃO',
@@ -173,6 +186,7 @@ class NoteDetailScreen extends StatelessWidget {
                       ),
                     ),
                   ],
+                  
                 ),
               ),
             ],
