@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
 allprojects {
     repositories {
         google()
@@ -19,6 +22,7 @@ subprojects {
 
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
+<<<<<<< HEAD
 =======
 plugins {
     id("com.android.application")
@@ -64,4 +68,6 @@ android {
 flutter {
     source = "../.."
 >>>>>>> 430eae4d43c66450f2d4347e957ff6f50f12d952
+=======
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
 }

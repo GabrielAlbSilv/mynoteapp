@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../../models/note.dart';
+<<<<<<< HEAD
 import '../screens/note_edit_screen.dart';
+=======
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
 
 // Widget que exibe um card com as informações de uma nota
 class NoteCard extends StatefulWidget {
@@ -20,14 +23,22 @@ class NoteCard extends StatefulWidget {
   State<NoteCard> createState() => _NoteCardState();
 }
 
+<<<<<<< HEAD
 class _NoteCardState extends State<NoteCard>
     with SingleTickerProviderStateMixin {
+=======
+class _NoteCardState extends State<NoteCard> with SingleTickerProviderStateMixin {
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
   late AnimationController _animationController;
   late Animation<double> _opacityAnimation;
 
   @override
   void initState() {
     super.initState();
+<<<<<<< HEAD
+=======
+    // Cria animação para quando o card é tocado
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 300),
@@ -44,6 +55,10 @@ class _NoteCardState extends State<NoteCard>
   }
 
   void _handleTap() {
+<<<<<<< HEAD
+=======
+    // Anima o card quando é tocado
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
     _animationController.forward().then((_) => _animationController.reverse());
     widget.onTap();
   }
@@ -55,7 +70,14 @@ class _NoteCardState extends State<NoteCard>
 
     return ScaleTransition(
       scale: Tween<double>(begin: 1.0, end: 1.02).animate(
+<<<<<<< HEAD
         CurvedAnimation(parent: _animationController, curve: Curves.easeOut),
+=======
+        CurvedAnimation(
+          parent: _animationController,
+          curve: Curves.easeOut,
+        ),
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
       ),
       child: Card(
         key: widget.key,
@@ -72,11 +94,19 @@ class _NoteCardState extends State<NoteCard>
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+<<<<<<< HEAD
                   // Ícone e imagem da categoria
+=======
+                  // Ícone de arrastar e imagem da categoria
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
                   Column(
                     children: [
                       Icon(Icons.drag_handle, color: Colors.grey[400]),
                       const SizedBox(height: 8),
+<<<<<<< HEAD
+=======
+                      // Imagem da categoria com cache
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
                       Hero(
                         tag: 'note_image_${widget.note.id}',
                         child: CachedNetworkImage(
@@ -113,12 +143,16 @@ class _NoteCardState extends State<NoteCard>
                     ],
                   ),
                   const SizedBox(width: 16),
+<<<<<<< HEAD
 
+=======
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
                   // Conteúdo da nota
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+<<<<<<< HEAD
                         // ✅ Título protegido com LayoutBuilder
                         LayoutBuilder(
                           builder: (context, constraints) {
@@ -156,6 +190,29 @@ class _NoteCardState extends State<NoteCard>
                         const SizedBox(height: 8),
 
                         // Categoria + data + status de sincronização
+=======
+                        // Título
+                        Text(
+                          widget.note.title,
+                          style: textTheme.titleLarge?.copyWith(
+                            color: colorScheme.onSurface,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(height: 4),
+                        // Conteúdo
+                        Text(
+                          widget.note.content,
+                          style: textTheme.bodyMedium?.copyWith(
+                            color: colorScheme.onSurfaceVariant,
+                          ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(height: 8),
+                        // Categoria, data e status de sincronização
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -177,6 +234,7 @@ class _NoteCardState extends State<NoteCard>
                       ],
                     ),
                   ),
+<<<<<<< HEAD
                   // ✅ Botão de editar
                   IconButton(
                     icon: Icon(Icons.edit),
@@ -191,6 +249,8 @@ class _NoteCardState extends State<NoteCard>
                     },
                   ),
 
+=======
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
                   // Botão de deletar
                   IconButton(
                     icon: Icon(

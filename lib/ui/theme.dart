@@ -7,7 +7,11 @@ class AppTheme {
     useMaterial3: true,
     brightness: Brightness.light,
     primaryColor: Colors.deepPurple,
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
     // Esquema de cores
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.deepPurple,
@@ -16,7 +20,11 @@ class AppTheme {
       surface: Colors.white,
       onSurface: Colors.black87,
     ),
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
     // Estilo da barra superior
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.deepPurple,
@@ -28,6 +36,7 @@ class AppTheme {
         fontWeight: FontWeight.bold,
       ),
     ),
+<<<<<<< HEAD
 
     // Estilo dos cards
     // Estilo dos cards
@@ -38,12 +47,28 @@ class AppTheme {
       ),
       margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
     ),
+=======
+    
+    // Estilo dos cards
+    // Estilo dos cards
+    cardTheme: const CardThemeData(
+    elevation: 2,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)),
+    ),
+    margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+  ),
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
     // Estilo do botão flutuante
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Colors.deepPurple,
       foregroundColor: Colors.white,
     ),
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
     // Estilos de texto
     textTheme: const TextTheme(
       headlineSmall: TextStyle(
@@ -71,7 +96,11 @@ class AppTheme {
     useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: Colors.deepPurple[700],
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
     // Esquema de cores escuro
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.deepPurple,
@@ -81,7 +110,11 @@ class AppTheme {
       surface: Colors.grey[900],
       onSurface: Colors.white70,
     ),
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
     // Estilo da barra superior (escuro)
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.grey[900],
@@ -93,6 +126,7 @@ class AppTheme {
         fontWeight: FontWeight.bold,
       ),
     ),
+<<<<<<< HEAD
 
     // Estilo dos cards (escuro)
     cardTheme: CardThemeData(
@@ -103,12 +137,29 @@ class AppTheme {
       margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
     ),
 
+=======
+    
+    // Estilo dos cards (escuro)
+    cardTheme: CardThemeData(
+    elevation: 4,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
+    ),
+    margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+    ),
+
+    
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
     // Estilo do botão flutuante (escuro)
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: Colors.deepPurple[400],
       foregroundColor: Colors.white,
     ),
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
     // Estilos de texto (escuro)
     textTheme: TextTheme(
       headlineSmall: TextStyle(

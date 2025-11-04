@@ -14,7 +14,11 @@ class NoteBloc extends Bloc<NoteEvent, NoteState> {
     on<AddNote>(_onAddNote);
     on<DeleteNote>(_onDeleteNote);
     on<ReorderNotes>(_onReorderNotes);
+<<<<<<< HEAD
     on<EditNote>(_onEditNote); // ✅ handler de edição
+=======
+    on<UpdateNote>(_onUpdateNote); // NOVO: handler de edição
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
   }
 
   // Gerador de IDs únicos
@@ -26,7 +30,10 @@ class NoteBloc extends Bloc<NoteEvent, NoteState> {
   // Handler para carregar as notas
   void _onLoadNotes(LoadNotes event, Emitter<NoteState> emit) async {
     emit(NoteLoading());
+<<<<<<< HEAD
 
+=======
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
     await Future.delayed(const Duration(milliseconds: 500));
 
     _notes = [
@@ -76,9 +83,13 @@ class NoteBloc extends Bloc<NoteEvent, NoteState> {
         id: _uuid.v4(),
         title: event.title,
         content: event.content,
+<<<<<<< HEAD
         category: AppConstants.categories.firstWhere(
           (cat) => cat.id == event.categoryId,
         ),
+=======
+        category: AppConstants.categories.firstWhere((cat) => cat.id == event.categoryId),
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
         createdAt: DateTime.now(),
         isSynced: false,
       );
@@ -94,33 +105,50 @@ class NoteBloc extends Bloc<NoteEvent, NoteState> {
   void _onDeleteNote(DeleteNote event, Emitter<NoteState> emit) async {
     if (state is NoteLoaded) {
       final currentNotes = List<Note>.from((state as NoteLoaded).notes);
+<<<<<<< HEAD
 
       currentNotes.removeWhere((note) => note.id == event.noteId);
       _notes = currentNotes;
 
+=======
+      currentNotes.removeWhere((note) => note.id == event.noteId);
+      _notes = currentNotes;
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
       emit(NoteLoaded(notes: List.from(_notes)));
     }
   }
 
+<<<<<<< HEAD
   // Handler para reordenar as notas (arrastar e soltar)
+=======
+  // Handler para reordenar notas
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
   void _onReorderNotes(ReorderNotes event, Emitter<NoteState> emit) {
     if (state is NoteLoaded) {
       final List<Note> currentNotes = List.from((state as NoteLoaded).notes);
 
       int newIndex = event.newIndex;
+<<<<<<< HEAD
       if (newIndex > event.oldIndex) {
         newIndex -= 1;
       }
+=======
+      if (newIndex > event.oldIndex) newIndex -= 1;
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
 
       final Note item = currentNotes.removeAt(event.oldIndex);
       currentNotes.insert(newIndex, item);
 
       _notes = currentNotes;
+<<<<<<< HEAD
 
+=======
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
       emit(NoteLoaded(notes: List.from(_notes)));
     }
   }
 
+<<<<<<< HEAD
   // ✅ Handler único e correto para editar uma nota existente
   void _onEditNote(EditNote event, Emitter<NoteState> emit) async {
     if (state is NoteLoaded) {
@@ -144,6 +172,24 @@ class NoteBloc extends Bloc<NoteEvent, NoteState> {
         currentNotes[noteIndex] = updatedNote;
         _notes = currentNotes;
 
+=======
+  // NOVO: Handler para atualizar nota existente
+  void _onUpdateNote(UpdateNote event, Emitter<NoteState> emit) {
+    if (state is NoteLoaded) {
+      final currentNotes = List<Note>.from((state as NoteLoaded).notes);
+      final index = currentNotes.indexWhere((note) => note.id == event.noteId);
+
+      if (index != -1) {
+        final updatedNote = currentNotes[index].copyWith(
+          title: event.title,
+          content: event.content,
+          category: AppConstants.categories.firstWhere((cat) => cat.id == event.categoryId),
+          isSynced: false,
+        );
+
+        currentNotes[index] = updatedNote;
+        _notes = currentNotes;
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
         emit(NoteLoaded(notes: List.from(_notes)));
       }
     }

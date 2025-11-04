@@ -64,7 +64,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 StatefulBuilder(
                   builder: (context, setStateDialog) {
                     return DropdownButtonFormField<String>(
+<<<<<<< HEAD
                       value: selectedCategoryId,
+=======
+                      initialValue: selectedCategoryId,
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
                       decoration: const InputDecoration(
                         labelText: 'Categoria',
                         border: OutlineInputBorder(),
@@ -164,7 +168,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: CircularProgressIndicator(),
             );
           }
+<<<<<<< HEAD
 
+=======
+          
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
           // Estado com notas carregadas
           else if (state is NoteLoaded) {
             if (state.notes.isEmpty) {
@@ -196,7 +204,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               );
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
             // Lista de notas com possibilidade de reordenar
             return ReorderableListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -233,7 +245,11 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             );
           }
+<<<<<<< HEAD
 
+=======
+          
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
           // Estado de erro
           else if (state is NoteError) {
             return Center(
@@ -259,7 +275,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             );
           }
+<<<<<<< HEAD
 
+=======
+          
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
           // Estado inicial
           return const Center(
             child: Text('Carregando...'),

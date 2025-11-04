@@ -1,5 +1,9 @@
 import 'package:equatable/equatable.dart';
+<<<<<<< HEAD
 import '../../models/category.dart'; // ✅ Import necessário (ajuste o caminho se for diferente)
+=======
+import 'package:helloworld/models/note.dart';
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
 
 // Classe base para todos os eventos relacionados a notas
 abstract class NoteEvent extends Equatable {
@@ -52,6 +56,7 @@ class ReorderNotes extends NoteEvent {
   List<Object> get props => [oldIndex, newIndex];
 }
 
+<<<<<<< HEAD
 // ✅ Novo evento: Editar uma nota existente
 class EditNote extends NoteEvent {
   final String noteId; // mantém a consistência com DeleteNote
@@ -60,12 +65,29 @@ class EditNote extends NoteEvent {
   final String categoryId; // usar o ID da categoria, não o objeto inteiro
 
   const EditNote({
+=======
+class UpdateNoteEvent extends NoteEvent {
+  final Note note;
+  UpdateNoteEvent(this.note);
+}
+class UpdateNote extends NoteEvent {
+  final String noteId;
+  final String title;
+  final String content;
+  final String categoryId;
+
+  UpdateNote({
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
     required this.noteId,
     required this.title,
     required this.content,
     required this.categoryId,
   });
+<<<<<<< HEAD
 
   @override
   List<Object> get props => [noteId, title, content, categoryId];
 }
+=======
+}
+>>>>>>> fc0304a8b9ddcd5dde35e41a81afff9d80bac4a9
